@@ -11,7 +11,17 @@ html {
 
 /* Home Page */
 .reliefMap {
-    background: cyan;
+    background: #b9c5c8;
     height: 100vh;
     display: block;
+}
+
+.infographics .info1 {
+    background: #f4cad3;
+    height: 50vh;
+}
+
+.infographics .info2 {
+    background: #fff48b;
+    height: 50vh;
 }
