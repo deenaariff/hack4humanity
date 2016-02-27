@@ -12,8 +12,8 @@ server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 
 // DB COMPONENTS
-var mongojs     =   require('mongojs');
-var morgan      =   require('morgan');
+var mongojs =  require('mongojs');
+var morgan  =  require('morgan');
 var db =  mongojs('mongodb://',['users','foodLists']);
 var mongodb = require("mongodb"),
 		ObjectID = mongodb.ObjectID
