@@ -11,8 +11,7 @@
         <link rel="stylesheet" href="clients/style/animate.css">
     </head>
 
-    <body>
-
+    <body onload="registerHandlers()">
 
         <!--Sliding Menu Page-->
         <div id="container">
@@ -29,8 +28,8 @@
                     <img src="./clients/img/omnicon.png" height="70" width = "70">
                   </div>
                     <nav class="menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Test1</a></li>
                         <li><a href="#">Services</a></li>
                         <li><a href="#">FAQ</a></li>
                         <li><a href="#">Register</a></li>
@@ -46,6 +45,17 @@
         <div class = "reliefMap">
             <br><br><br>
             <p> Relief Map</p>
+
+            <div>
+              <button id="DropPin" type="button">Drop Pin</button>
+            </div>
+
+            <br/>
+
+            <div id="map"></div>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvpWn3VCKpN7zo7nAI266v50ql36b7vvc&signed_in=true&callback=initMap"
+            async defer></script>
         </div>
 
 
@@ -75,6 +85,6 @@
     <!-- core jquery & js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+    <script src="map.js"></script>
 
 </html>
