@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class = "animated fadeIn">
+    <head>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Disaster Relief </title>
+        <link href='https://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../style/style.css">
+        <link rel="stylesheet" href="../style/animate.css">
+        <link rel="stylesheet" href="../style/menu.css">
+        <link rel="shortcut icon" href="../../favicon(2).ico" type="image/x-icon">
+        <link rel="icon" href="../../favicon(2).ico" type="image/x-icon">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvpWn3VCKpN7zo7nAI266v50ql36b7vvc&signed_in=true&callback=initMap"
+        async defer></script>
+    </head>
+
+    <body onload="registerHandlers()">
+
+        <!--Sliding Menu Page-->
+        <div id="container">
+
+            <input id="toggle" type="checkbox"><label for = "toggle"></label>
+
+            <div class="content">
+
+                <!--Nav Bar-->
+                <nav class="navbar navbar-default">
+                  <div class="container-fluid">
+                    <div class="navbar-header">
+                      <a class="navbar-brand" href="../../index.html">DISASTER RELIEF |</a>
+                    </div>
+
+                    <ul class="nav navbar-nav">
+                      <li><a href= "about.html">ABOUT</a></li>
+                      <li><a href="donate.html">DONATE</a></li>
+                      <li><a href="#">LOCATIONS</a></li>
+                    </ul>
+                  </div>
+                </nav>
+                
+                
+            <div class = "info2">
+                <form method="post" action="process.php" align="center" style="margin-top:30px;">
+                    <fieldset>
+                    <h1 style = "font-size: 40px; text-align: center">• Donate •</h1>
+                    <br>
+                    Name<br>
+                    <input type="text" name="name">
+                    <br><br>
+                    Amount<br>
+                    <input type="text" name="amount">
+                    </fieldset>
+                    <br>
+                    <button style="background-color: #3d404e; input: color:black;" type="button" onclick="donate()">Donate!</button>
+                </form>
+            </div>
+
+            </div>
+
+            <div class="slide-menu">
+                <h1>MENU</h1>
+                  <div class="omnicon">
+                    <img src="../img/omnicon.png" height="70" width = "70">
+                  </div>
+                    <nav class="menu">
+                      <div class="cascade-menu">
+                      <ul>
+                        <li class="fa-home">LOCATION</li>
+                        <li class="fa-suitcase">LOGOUT</li>
+                        <li class="fa-flask"></li>
+                        <li class="fa-user"></li>
+                      </ul>
+                    </div>
+                    </nav>
+            </div>
+        </div>
+        
+        
+        <!-- Navbar fixed bottom -->
+        <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+          <div class="container">
+            <!--<a href="event_form/worker.html">WORKER</a> -->
+          </div>
+        </div>
+
+ 
+
+        </div>
+
+
+
+    </body>
+
+
+
+    <!-- core jquery & js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="map.js"></script>
+    <script src="/event_form/eventForm.js"></script>
+<footer>
+    <br>
+</footer>
+
+</html>
