@@ -9,11 +9,10 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="clients/style/style.css">
         <link rel="stylesheet" href="clients/style/animate.css">
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvpWn3VCKpN7zo7nAI266v50ql36b7vvc&signed_in=true&callback=initMap"
-        async defer></script>
     </head>
 
-    <body onload="registerHandlers()">
+    <body>
+
 
         <!--Sliding Menu Page-->
         <div id="container">
@@ -21,31 +20,7 @@
             <input id="toggle" type="checkbox"><label for = "toggle"></label>
 
             <div class="content">
-
-                <!--Nav Bar-->
-                <nav class="navbar navbar-default">
-                  <div class="container-fluid">
-                    <div class="navbar-header">
-                      <a class="navbar-brand" href="#">DISASTER RELIEF |</a>
-                    </div>
-                    <ul class="nav navbar-nav">
-                      <li><a href="#">ABOUT</a></li>
-                      <li><a href="#">DONATE</a></li>
-                      <li><a href="#">LOCATIONS</a></li>
-                    </ul>
-                  </div>
-                </nav>
-
-                <!--Relief Map-->
-                <div class = "relief-map">
-
-                <!--
-                    <div>
-                      <button id="drop-pin" type="button">DROP PIN</button>
-                    </div>
-                -->
-                    <div id="map"></div>
-                </div>
+                <h1>DISASTER RELIEF</h1>
             </div>
 
             <div class="slide-menu">
@@ -54,11 +29,25 @@
                     <img src="./clients/img/omnicon.png" height="70" width = "70">
                   </div>
                     <nav class="menu">
-                        <li><a href="#">Locations</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Test1</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Register</a></li>
+                        <li><a href="#">Sign In</a></li>
                     </nav>
             </div>
+
         </div>
+
+
+
+        <!--Relief Map-->
+        <div class = "reliefMap">
+            <br><br><br>
+            <p> Relief Map</p>
+        </div>
+
 
         <!--Infographics-->
         <div class = "infographics">
@@ -86,6 +75,6 @@
     <!-- core jquery & js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="map.js"></script>
+
 
 </html>

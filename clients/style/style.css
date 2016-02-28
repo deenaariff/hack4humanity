@@ -9,6 +9,17 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+  font-family: Quicksand, sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  height: 50px;
+  line-height: 53px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
 /* NavBar */
 .navbar {
 	background: transparent;
@@ -40,6 +51,10 @@ body {
     min-height: 100%;
 }
 
+#map {
+  height: 100%;
+}
+
 input[type=checkbox] {
     position: absolute;
     opacity: 0;
@@ -68,14 +83,13 @@ input[type=checkbox]:checked ~ label {
 .content {
     width:100%;
     padding: 40px;
-/*    background: #343d46;*/
+    background: #343d46;
     background-image: url(/clients/img/disaster.jpg);
     background-size: cover;
-	background-repeat: no-repeat;
+	  background-repeat: no-repeat;
     color: whitesmoke;
     transform: translate3d(0, 0, 0);
     transition: transform 4s;
-    opacity: .8;
 }
 
 input[type=checkbox]:checked ~ .content {
@@ -104,8 +118,13 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
 }
 
 .slide-menu h1 {
-   margin: 10px;
-   text-shadow: 1px 1px 1px #000;
+   font-family: Quicksand, sans-serif;
+   font-size: 30px;
+   font-style: normal;
+   height: 30px;
+   line-height: 32px;
+   margin-top: 50px;
+   text-align: center;
 }
 
 .menu {
