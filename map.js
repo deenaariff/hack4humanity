@@ -4,7 +4,7 @@ var map;
 var markers = {};
 
 function registerHandlers(){
-  updateMap();
+  //updateMap();
 }
 
 function initMap() {
@@ -68,12 +68,13 @@ function removeMarker(euid){
 
 function updateMap(){
   var unparsed_events = $.get("http://51491492.ngrok.io/events/getAll");
-  console.log(unparsed_events);
+  //console.log(unparsed_events);
   var events = JSON.parse(unparsed_events.responseText);
 
-  len = events.length;
-
-  console.log(len);
+  // len = events.length;
+  // console.log(events);
+  //
+  // console.log(len);
 
   addMarker(events[0].euid, events[0].position, 2);
 
@@ -83,9 +84,29 @@ function updateMap(){
   // }
 }
 
-function test(){
-  for (i = 0; i < 3; i++){
-    console.log("Test");
-    addMarker(events[i].euid, events[i].position, 2);
-  }
+function pause()
+   {
+   setTimeout(pause, 3000);
+   }
+
+
+
+var unparsed_events;
+
+function test1(){
+  //unparsed_events = $.get("http://51491492.ngrok.io/events/getAll");
+  //wait until above is compelte! stupid asychronous
+  unparsed_text = $.get("http://51491492.ngrok.io/events/getAll";
+  pause();
+  test2();
+}
+
+function test2(){
+  var events = JSON.parse(unparsed_events.responseText);
+  addMarker(events[0].euid, events[0].position, 2);
+}
+
+function test3(){
+  console.log("Test 3 complete!")
+  console.log(unparsed_text)
 }
