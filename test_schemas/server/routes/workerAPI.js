@@ -35,7 +35,7 @@ module.exports = function (app, db, ObjectID, workers, events) {
 
   	});
 
-	// SEE REQUEUSTS
+	// SEE REQUESTS
 	app.get('/worker/requests/:id', function (req, res) {
 
     console.log("Worker Requests called");
