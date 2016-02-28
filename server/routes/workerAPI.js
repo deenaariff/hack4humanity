@@ -5,9 +5,7 @@ module.exports = function (app, db, ObjectID) {
         var user_object = {
         	'id': user_id,
         	'name': ' ',
-        	'work_info': {
-        		'event': 
-        	},
+        	'work_info': { 'event': 000 },
         	'req_info': {},
         	'status': 'available'
         }

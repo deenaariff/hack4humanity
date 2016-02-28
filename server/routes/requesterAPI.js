@@ -1,4 +1,4 @@
-module.exports = function (app db, ObjectID) {
+module.exports = function (app, db, ObjectID) {
 
  	var ObjectId = ObjectID;
 
