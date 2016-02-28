@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="worker.js"></script>
+    </head>
+    <body>
+        <form method="post" action="process.php">
+            <fieldset>
+                <legend>New User:</legend><br>
+                Enter First Name:<br>
+                <input type="text" name="name">
+                <br><br>
+                <button type="button" id = "load" onclick="sendAJAX()">Submit</button>
+            </fieldset>
+        </form>
+        
+        <form method="post" action="process1.php">
+            <fieldset>
+                <legend>Worker Request</legend><br>
+                Enter your User Id<br>
+                <input type="text" name="id">
+                <br><br>
+                <button type="button" id = "load" onclick="sendAJAX1()">Submit</button>
+            </fieldset>
+        </form>
+        
+        <form method="post" action="process2.php">
+            <fieldset>
+                <legend>Accept/Deny Requests</legend><br>
+                Enter your User Id<br>
+                <input type="text" name="id">
+                <br><br>
+                Enter event name<br>
+                <input type="text" name="event">
+                <br><br>
+                Accept or Deny?<br>
+                <input type="text" name="invitation">
+                <br><br>
+                <button type="button" id = "load" onclick="sendAJAX2()">Submit</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

@@ -38,6 +38,7 @@ h1 {
 .navbar-default .navbar-nav > li > a {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 10px;
+  margin-top: 12px;
 }
 
 /* Home Page */
@@ -56,6 +57,7 @@ h1 {
     background: #fff48b;
     height: 50vh;
 }
+
 
 
 
@@ -132,6 +134,7 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
 }
 
 .slide-menu h1 {
+   color: #3d404e;
    font-family: Quicksand, sans-serif;
    font-size: 30px;
    font-style: normal;
@@ -142,6 +145,12 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
    text-align: center;
 }
 
+.slide-menu .menu {
+   font-family: Quicksand, sans-serif;
+   font-size: 20px;
+   margin-top: 40px;
+}
+
 .menu {
    list-style: none;
    padding: 0;
@@ -149,12 +158,12 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
 }
 
 .menu a {
+   background: #c0c5ce;
+   color: #3d404e;
    display: block;
-   text-decoration: none;
-   color: #343d46;
    font-size: 2vh;
    padding: 15px;
-   background: #c0c5ce;
+   text-decoration: none;
 }
 
 .menu a:hover {
