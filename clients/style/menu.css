@@ -13,7 +13,6 @@
   display: block;
   width: 70px;
   height: 70px;
-  background-color: blue;
   border-radius: 50%;
   opacity: 0.6;
   mix-blend-mode: screen;
@@ -48,28 +47,28 @@ li:after{
 }
 
 .cascade-menu li:nth-child(1) {
-  background-color: #004DB3;
+  background-color: #cb4e9c;
   transform: translate(0, -20%);
   z-index: 3;
   transition-duration: 0.12s;
 }
 
  .cascade-menu li:nth-child(2) {
-  background-color: #26B85A;
+  background-color: #83cec3;
   transform: translate(20%, 0);
   z-index: 2;
   transition-duration: 0.24s;
 }
 
 .cascade-menu li:nth-child(3) {
-  background-color: #FFCB00;
+  background-color: #cb4e9c;
   transform: translate(0, 20%);
   z-index: 1;
   transition-duration: 0.36s;
 }
 
 .cascade-menu li:nth-child(4) {
-  background-color: #D88E8E;
+  background-color: #83cec3;
   transform: translate(-20%, 0);
   z-index: 0;
   transition-duration: 0.48s;
