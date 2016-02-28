@@ -26,6 +26,20 @@ h1 {
 	border: 0;
 }
 
+.navbar-brand {
+	color: #FFFFFF;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 30px;
+  line-height: 50px;
+  height: 30px;
+  padding-top: 10px;
+}
+
+.navbar-default .navbar-nav > li > a {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 10px;
+}
+
 /* Home Page */
 .relief-map {
     background: #b9c5c8;
@@ -82,9 +96,8 @@ input[type=checkbox]:checked ~ label {
 
 .content {
     width:100%;
-    padding: 40px;
+    padding: 0px;
     background: #343d46;
-    background-image: url(/clients/img/disaster.jpg);
     background-size: cover;
 	  background-repeat: no-repeat;
     color: whitesmoke;
@@ -114,6 +127,7 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
     color: #343d46;
     right: 0;
     height: 100%;
+    text-align: center;
     transition: all .4s;
 }
 
@@ -123,6 +137,7 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
    font-style: normal;
    height: 30px;
    line-height: 32px;
+   margin-bottom: 50px;
    margin-top: 50px;
    text-align: center;
 }
@@ -140,8 +155,6 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
    font-size: 2vh;
    padding: 15px;
    background: #c0c5ce;
-   border-bottom: 1px solid #1e222b;
-/*   box-shadow: inset 0px 1px 1px #8b9db3;*/
 }
 
 .menu a:hover {
