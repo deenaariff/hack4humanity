@@ -5,12 +5,10 @@ var bodyParser = require('body-parser');
 var cors = require('cors')
 
 
-
 // PARSER
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cors())
-
 
 // DB COMPONENTS
 var mongojs =  require('mongojs');
@@ -19,18 +17,22 @@ var db =  mongojs('mongodb://hacker:hacker@ds019058.mlab.com:19058/hack4humanity
 var mongodb = require("mongodb"),
 	ObjectID = mongodb.ObjectID
 
+// VARIABLES
+var workers = [];
+var events = [];
+var start = 1;
+if (start === 1) {
+	db.users.find( function (err, data) { workers = data; });
+	db.events.find( function (err, data) { events = data; });
+	start += 1;
+}
+
 // SERVER COMPONENTS
-var requesterAPI = require('./routes/requesterAPI')(app, db, ObjectID);
-var workerAPI = require('./routes/workerAPI')(app, db, ObjectID);
-var eventAPI = require('./routes/eventAPI')(app, db, ObjectID);
-
-
-// DATASTRUCTURE COMPONENTS
-var workerQueue = require('./structures/wQueue')
-var eventPQueue = require('./structures/eventPQueue')
+var workerAPI = require('./routes/workerAPI')(app, db, ObjectID, workers, events);
+var eventAPI = require('./routes/eventAPI')(app, db, ObjectID, workers, events);
 
 app.get('/', function (req, res) { 
-	res.end("Working");
+	res.end("Hack4Humanity Sample Get Request");
 });
 
 // LISTEN 
