@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
+
 // PARSER
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -12,7 +13,7 @@ app.use(bodyParser.json())
 // DB COMPONENTS
 var mongojs =  require('mongojs');
 var morgan  =  require('morgan');
-var db =  mongojs('h4h',['users','events']);
+var db =  mongojs('mongodb://hacker:hacker@ds019058.mlab.com:19058/hack4humanity',['users','events']);
 var mongodb = require("mongodb"),
 	ObjectID = mongodb.ObjectID
 
