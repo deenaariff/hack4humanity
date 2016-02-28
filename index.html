@@ -83,7 +83,6 @@
         font-size: 30px;
         color: white;
     }
-
 </style>
 
 
@@ -99,7 +98,35 @@
                     </div>
                     <div class="col-md-6">
                         <div class = "info2">
-                            <form method="post" action="process.php" align="center" style="margin-top:30px;">
+
+                        <form method="post" action="process.php" align="center">
+                            <fieldset>
+                                <h1 style = "font-size: 40px; text-align: center">• New User •</h1><br>
+                                Enter First Name:<br>
+                                <input type="text" name="name">
+                                <br><br>
+                                <button type="button" id = "load" onclick="sendAJAX()">Submit</button>
+                            </fieldset>
+                        </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            
+            
+            
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class = "info1">
+                            <p> Feed </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class = "info2">
+                            <form method="post" action="process.php" align="center">
                                 <fieldset>
                                 <h1 style = "font-size: 40px; text-align: center">• Create New Event •</h1>
                                 <br>
@@ -135,6 +162,7 @@
                 </div>
             </div>
 
+
         </div>
         
         <!-- Navbar fixed bottom -->
@@ -156,6 +184,8 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="map.js"></script>
     <script src="/event_form/eventForm.js"></script>
+    <script src="/event_form/worker.js"></script>
+
 <footer>
     <br>
 </footer>
