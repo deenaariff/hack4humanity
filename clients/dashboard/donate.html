@@ -8,9 +8,11 @@
         <title> Disaster Relief </title>
         <link href='https://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/clients/style/style.css">
-        <link rel="stylesheet" href="/clients/style/animate.css">
-        <link rel="stylesheet" href="/clients/style/menu.css">
+        <link rel="stylesheet" type="text/css" href="../style/style.css">
+        <link rel="stylesheet" href="../style/animate.css">
+        <link rel="stylesheet" href="../style/menu.css">
+        <link rel="shortcut icon" href="../../favicon(2).ico" type="image/x-icon">
+        <link rel="icon" href="../../favicon(2).ico" type="image/x-icon">
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvpWn3VCKpN7zo7nAI266v50ql36b7vvc&signed_in=true&callback=initMap"
         async defer></script>
     </head>
@@ -28,23 +30,40 @@
                 <nav class="navbar navbar-default">
                   <div class="container-fluid">
                     <div class="navbar-header">
-                      <a class="navbar-brand" href="/index.html">DISASTER RELIEF |</a>
+                      <a class="navbar-brand" href="../../index.html">DISASTER RELIEF |</a>
                     </div>
 
                     <ul class="nav navbar-nav">
-                      <li><a href="/clients/dashboard/about.html">ABOUT</a></li>
-                      <li><a href="/clients/dashboard/donate.html">DONATE</a></li>
+                      <li><a href= "about.html">ABOUT</a></li>
+                      <li><a href="donate.html">DONATE</a></li>
                       <li><a href="#">LOCATIONS</a></li>
                     </ul>
                   </div>
                 </nav>
+                
+                
+            <div class = "info2">
+                <form method="post" action="process.php" align="center" style="margin-top:30px;">
+                    <fieldset>
+                    <h1 style = "font-size: 40px; text-align: center">• Donate •</h1>
+                    <br>
+                    Name<br>
+                    <input type="text" name="name">
+                    <br><br>
+                    Amount<br>
+                    <input type="text" name="amount">
+                    </fieldset>
+                    <br>
+                    <button style="background-color: #3d404e; input: color:black;" type="button" onclick="donate()">Donate!</button>
+                </form>
+            </div>
 
             </div>
 
             <div class="slide-menu">
                 <h1>MENU</h1>
                   <div class="omnicon">
-                    <img src="/clients/img/omnicon.png" height="70" width = "70">
+                    <img src="../img/omnicon.png" height="70" width = "70">
                   </div>
                     <nav class="menu">
                       <div class="cascade-menu">
@@ -58,12 +77,8 @@
                     </nav>
             </div>
         </div>
-
-    
-<!--
-        Infographics
-        <div class = "infographics">
-=======
+        
+        
         <!-- Navbar fixed bottom -->
         <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
           <div class="container">
