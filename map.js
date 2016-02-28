@@ -3,6 +3,10 @@
 var map;
 var markers = {};
 
+function registerHandlers(){
+  updateMap();
+}
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.773972, lng: -122.4167},
@@ -12,7 +16,7 @@ function initMap() {
   var infoWindow = new google.maps.InfoWindow({map: map});
 
   //event listener should be replaced with incoming requests
-  document.getElementById("drop-pin").addEventListener('click',function(){addMarker(0, {lat: 37.773972, lng: -122.4167},map,2)});
+  document.getElementById("drop-pin").addEventListener('click',function(){addMarker(0, {lat: 37.773972, lng: -122.4167},2)});
 }
 
 function setMapOnAll(map) {
@@ -21,7 +25,8 @@ function setMapOnAll(map) {
   }
 }
 
-function addMarker(euid, location, map, color) {
+function addMarker(euid, location, color) {
+  console.log("test")
   //marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
   switch(color){
     case 1:
@@ -59,4 +64,16 @@ function removeMarker(euid){
 
   //console.log("Marker Removed");
   //markers = markers.filter(function(marker){marker.euid != euid})
+}
+
+function updateMap(){
+  var unparsed_events = $.get("http://51491492.ngrok.io/events/getAll");
+  console.log(unparsed_events);
+  var events = JSON.parse(unparsed_events.responseText);
+
+  len = events.length;
+
+  // for(int i = 0; i < len; i++){
+  //   addMarker(events[i].uid, events[i].position, 2);
+  // }
 }
