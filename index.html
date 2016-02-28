@@ -32,7 +32,6 @@
 
                     <ul class="nav navbar-nav">
                       <li><a href="#">ABOUT</a></li>
-                      <li><a href="event_form/worker.html">WORKER</a> </li>
                       <li><a href="#">DONATE</a></li>
                       <li><a href="#">LOCATIONS</a></li>
                     </ul>
@@ -70,8 +69,54 @@
             </div>
         </div>
 
-        <!--Infographics-->
+<<<<<<< HEAD
+
+    <form method="post" action="process.php">
+        <fieldset>
+        <legend> New Event </legend>
+        <br><br>     
+        Type of Disaster:<br>
+        <input type="text" name="type">
+        <br><br>
+        Severity:<br>
+        <input type="text" name="severity">
+        <br><br>
+        Workers Needed:<br>
+        <input type="text" name="workers_needed">
+        <br><br>
+        Workers:<br>
+        <input type="text" name="workers">
+        <br><br>
+        Latitude:<br>
+        <input type="text" name="lat">
+        <br><br>
+        Longitude:<br>
+        <input type="text" name="long">
+        <br><br>
+        Name of Leader:<br>
+        <input type="text" name="leader">  
+        <br><br>
+        <button type="button" onclick="submitEvent()">Submit Event</button>
+        </fieldset>
+        <br><br>
+        <button type="button" onclick="getEvent()">Get Event</button>
+    </form>
+        
+        
+<!--
+        Infographics
         <div class = "infographics">
+=======
+        <!-- Navbar fixed bottom -->
+        <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+          <div class="container">
+            <a href="event_form/worker.html">WORKER</a>
+          </div>
+        </div>
+
+        <!--Infographics-->
+        <!-- <div class = "infographics">
+>>>>>>> origin/master
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
@@ -86,7 +131,12 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>
+-->
+=======
+        </div> -->
+>>>>>>> origin/master
 
 
     </body>
@@ -97,5 +147,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="map.js"></script>
+    <script src="/event_form/eventForm.js"></script>
 
 </html>

@@ -41,6 +41,13 @@ h1 {
   margin-top: 12px;
 }
 
+.navbar-default .navbar-fixed-bottom a {
+  color: #c8cad4;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 10px;
+  margin-top: 20px;
+}
+
 /* Home Page */
 .relief-map {
     background: #b9c5c8;
@@ -98,7 +105,9 @@ label {
 }
 
 input[type=checkbox]:checked ~ label {
+    opacity: 0.0;
     transform: translate3d(-30vh, 0, 0) rotate(90deg);
+    transition: all 0.8s;
 }
 
 .content {

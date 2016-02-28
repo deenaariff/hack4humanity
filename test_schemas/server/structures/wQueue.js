@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-module.exports = function (workers) {
-=======
 module.exports = function () {
  
  function push (queue, worker) { 
@@ -10,6 +7,5 @@ module.exports = function () {
  function pop (queue) {
  	return shift(queue);
  }
->>>>>>> origin/master
 
 }

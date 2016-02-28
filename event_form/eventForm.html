@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="eventForm.js"></script>
+    </head>
+<body>
+    <form method="post" action="process.php">
+        <br><br>     
+        Type of Disaster:<br>
+        <input type="text" name="type">
+        <br><br>
+        Severity:<br>
+        <input type="text" name="severity">
+        <br>
+        Workers Needed:<br>
+        <input type="text" name="workers_needed">
+        <br>
+        Workers:<br>
+        <input type="text" name="workers">
+        <br><br>
+        Latitude:<br>
+        <input type="text" name="lat">
+        <br>
+        Longitude:<br>
+        <input type="text" name="long">
+        <br><br>
+        Name of Leader:<br>
+        <input type="text" name="leader">  
+        <br><br>
+        <button type="button" onclick="submitEvent()">Submit Event</button>
+        </fieldset>
+        <br><br>
+        <button type="button" onclick="getEvent()">Get Event</button>
+    </form>
+</body>
+</html> 
