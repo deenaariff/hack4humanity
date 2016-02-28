@@ -1,9 +1,5 @@
 module.exports = function (app, db, ObjectID, workers, events) {
 
-  var ai = require('../structures/shuffle')(workers,events);
-  var queue = require('../structures/wQueue');
-  var pqueue = require('../structures/eventPQueue')
-
 	// WORKING
 	app.post('/worker/new/:name', function (req, res) {
 
@@ -26,40 +22,41 @@ module.exports = function (app, db, ObjectID, workers, events) {
 
         db.users.save(user_object,
           function (err, data) {
-              console.log(JSON.stringify(data));
+              console.log("New worker: " + user_object["name"]);
+              console.log("Workers in queue: " + workers);
+              console.log("Workers in queue: " + workers.length);
               res.send(JSON.stringify(data));
         });
 
-        var quickSortbyID = function (events) {
-            var pivot = events[0];
-            var lessThan = [];
-            var greaterThan = [];
-            for (var k = 1; k < events.length; k++) {
-              // original function sorted in ascending, reversed operator to make descending 
-                if (data[k][6] > pivot[6]) lessThan.push(data[k]);   
-                else greaterThan.push(data[k]);
-            }
-            if (lessThan.length > 1) lessThan = quickSortbyID(lessThan); // sort data less than pviot
-            lessThan.push(events[0]);
-            if (greaterThan.length > 1) greaterThan = quickSortbyID(greaterThan); // sort data greater than pivot
-            return lessThan.concat(greaterThan);
-        }
+        workers += user_object;
 
-          // Intelligent Allocation
-        while (workers.length != 0 || events.length != 0) {
-           worker = shift(workers);
-           var first = events[0];
-           if(events[0].priority != 0) {
-                events[0].commited_workers += worker;
-                priority = (first[3] - first[4].size())*severity;
-                quickSortbyID(events);
-            }
-           else {
-              for (var i = 0; k < first[3].size(); i++) 
-                workers.push(first.commited_workers[i]);
-              delete(events[0]);
-           }
-        }   
+         var quickSortbyID = function () {
+              var swapped;
+              do {
+                  swapped = false;
+                  for (var i=0; i < events.length-1; i++) {
+                      if (events[i]["priority"] > events[i+1]["priority"]) {
+                          var temp = events[i];
+                          events[i] = events[i+1];
+                          events[i+1] = temp;
+                          swapped = true;
+                      }
+                  }
+              } while (swapped);
+          }
+          console.log (workers);
+
+          quickSortbyID();
+          while(workers.length != 0 && events.length != 0 && events[0]["priority"] != 0 ) {
+            console.log("Workers in pqueue(BEFORE): " + events[0]["commited_workers"].length);
+            events[0]["commited_workers"].push(workers[0]);
+            delete(workers[0]);
+            events[0]["priority"] = events[0]["workers_needed"] - events[0]["commited_workers"].length;
+            db.events.update(events[0]["euid"], events[0], function () {
+            });
+            console.log("Workers in queue(after): " + events[0]["commited_workers"].length);
+            quickSortbyID();
+          }
 
       });
 
@@ -111,6 +108,16 @@ module.exports = function (app, db, ObjectID, workers, events) {
          	res.send("Succesful");
       });
   	});
+
+
+    // GET ALL EVENTS
+    app.get('/workers/numWorkers', function (req, res, next) {
+        db.users.count( function (err, data) {
+          res.send(JSON.stringify(data));
+        });
+
+    });
+
 
 
 };

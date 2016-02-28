@@ -17,18 +17,23 @@ var mongodb = require("mongodb"),
 	ObjectID = mongodb.ObjectID
 
 // VARIABLES
+var workerAPI;
+var eventAPI;
 var workers = [];
 var events = [];
-var start = 1;
-if (start === 1) {
-	db.users.find( function (err, data) { workers = data; });
-	db.events.find( function (err, data) { events = data; });
+var start = 0;
+if (start === 0) {
+	console.log("Updating workers and events")
+	db.events.find( function (err, data) { 
+		events = data;
+		db.users.find( function (err, data) { 
+			workers = data;    
+			workerAPI = require('./routes/workerAPI')(app, db, ObjectID, workers, events); 
+			eventAPI = require('./routes/eventAPI')(app, db, ObjectID, workers, events);
+		});
+    });
 	start += 1;
 }
-
-// SERVER COMPONENTS
-var workerAPI = require('./routes/workerAPI')(app, db, ObjectID, workers, events);
-var eventAPI = require('./routes/eventAPI')(app, db, ObjectID, workers, events);
 
 app.get('/', function (req, res) { 
 	res.end("Hack4Humanity Sample Get Request");
