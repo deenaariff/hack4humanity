@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class = "animated fadeIn">
     <head>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,12 +70,27 @@
             </div>
         </div>
 
-<<<<<<< HEAD
+<style>
+    input {
+        font-size: 25px;
+        text-align: center;
+    }
+    button {
+        font-size: 25px;
+        border: 2px solid black;
+    }
+    button:hover {
+        font-size: 30px;
+        color: white;
+    }
 
-    <form method="post" action="process.php">
+</style>
+
+    <form method="post" action="process.php" align="center" style="margin-top:30px;">
         <fieldset>
-        <legend> New Event </legend>
-        <br><br>     
+        <h1 style = "font-size: 40px; text-align: center">• Create New Event •</h1>
+        <br>
+
         Type of Disaster:<br>
         <input type="text" name="type">
         <br><br>
@@ -95,10 +111,10 @@
         <br><br>
         Name of Leader:<br>
         <input type="text" name="leader">  
-        <br><br>
-        <button type="button" onclick="submitEvent()">Submit Event</button>
+        <br><br><br>
+        <button style="background-color: #98FB98;" type="button" onclick="submitEvent()">Submit Event</button>
         </fieldset>
-        <br><br>
+        <br>
         <button type="button" onclick="getEvent()">Get Event</button>
     </form>
         
@@ -110,7 +126,7 @@
         <!-- Navbar fixed bottom -->
         <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
           <div class="container">
-            <a href="event_form/worker.html">WORKER</a>
+            <!--<a href="event_form/worker.html">WORKER</a> -->
           </div>
         </div>
 
@@ -134,9 +150,9 @@
 <<<<<<< HEAD
         </div>
 -->
-=======
-        </div> -->
->>>>>>> origin/master
+
+        </div>
+
 
 
     </body>
@@ -148,5 +164,8 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="map.js"></script>
     <script src="/event_form/eventForm.js"></script>
+<footer>
+    <br>
+</footer>
 
 </html>
