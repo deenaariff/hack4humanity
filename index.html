@@ -28,12 +28,12 @@
                 <nav class="navbar navbar-default">
                   <div class="container-fluid">
                     <div class="navbar-header">
-                      <a class="navbar-brand" href="/index.html">DISASTER RELIEF |</a>
+                      <a class="navbar-brand" href="index.html">DISASTER RELIEF |</a>
                     </div>
 
                     <ul class="nav navbar-nav">
-                      <li><a href="/clients/dashboard/about.html">ABOUT</a></li>
-                      <li><a href="/clients/dashboard/donate.html">DONATE</a></li>
+                      <li><a href="clients/dashboard/about.html">ABOUT</a></li>
+                      <li><a href="clients/dashboard/donate.html">DONATE</a></li>
                       <li><a href="#">LOCATIONS</a></li>
                     </ul>
                   </div>
@@ -86,43 +86,57 @@
 
 </style>
 
-    <form method="post" action="process.php" align="center" style="margin-top:30px;">
-        <fieldset>
-        <h1 style = "font-size: 40px; text-align: center">• Create New Event •</h1>
-        <br>
 
-        Type of Disaster:<br>
-        <input type="text" name="type">
-        <br><br>
-        Severity(1-10):<br>
-        <input type="text" name="severity">
-        <br><br>
-        Workers Needed:<br>
-        <input type="text" name="workers_needed">
-        <br><br>
-        Workers Committed:<br>
-        <input type="text" name="workers">
-        <br><br>
-        Latitude:<br>
-        <input type="text" name="lat">
-        <br><br>
-        Longitude:<br>
-        <input type="text" name="long">
-        <br><br>
-        Name of Leader:<br>
-        <input type="text" name="leader">  
-        <br><br><br>
-        <button style="background-color: #98FB98;" type="button" onclick="submitEvent()">Submit Event</button>
-        </fieldset>
-        <br>
-        <button type="button" onclick="getEvent()">Get Event</button>
-    </form>
-        
-        
-<!--
-        Infographics
+        <!--Infographics-->
         <div class = "infographics">
-=======
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class = "info1">
+                            <p> Feed </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class = "info2">
+                            <form method="post" action="process.php" align="center" style="margin-top:30px;">
+                                <fieldset>
+                                <h1 style = "font-size: 40px; text-align: center">• Create New Event •</h1>
+                                <br>
+
+                                Type of Disaster:<br>
+                                <input type="text" name="type">
+                                <br><br>
+                                Severity(1-10):<br>
+                                <input type="text" name="severity">
+                                <br><br>
+                                Workers Needed:<br>
+                                <input type="text" name="workers_needed">
+                                <br><br>
+                                Workers Committed:<br>
+                                <input type="text" name="workers">
+                                <br><br>
+                                Latitude:<br>
+                                <input type="text" name="lat">
+                                <br><br>
+                                Longitude:<br>
+                                <input type="text" name="long">
+                                <br><br>
+                                Name of Leader:<br>
+                                <input type="text" name="leader">  
+                                <br><br><br>
+                                <button style="background-color: #98FB98;" type="button" onclick="submitEvent()">Submit Event</button>
+                                </fieldset>
+                                <br>
+                                <button type="button" onclick="getEvent()">Get Event</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
         <!-- Navbar fixed bottom -->
         <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
           <div class="container">
@@ -130,28 +144,6 @@
           </div>
         </div>
 
-        <!--Infographics-->
-        <!-- <div class = "infographics">
->>>>>>> origin/master
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class = "info1">
-                            <p> Info 1</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class = "info2">
-                            <p> Info 2</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-        </div>
--->
-
-        </div>
 
 
 
