@@ -22,6 +22,10 @@ var requesterAPI = require('./routes/requesterAPI')(app, db, ObjectID);
 var workerAPI = require('./routes/workerAPI')(app, db, ObjectID);
 var eventAPI = require('./routes/eventAPI')(app, db, ObjectID);
 
+app.get('/', function (req, res) { 
+	res.end("Working");
+}
+
 // LISTEN 
 console.log("Listening on PORT: "  + PORT);
 app.listen(PORT);
