@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="clients/style/style.css">
         <link rel="stylesheet" href="clients/style/animate.css">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvpWn3VCKpN7zo7nAI266v50ql36b7vvc&signed_in=true&callback=initMap"
+        async defer></script>
     </head>
 
     <body onload="registerHandlers()">
@@ -19,7 +21,32 @@
             <input id="toggle" type="checkbox"><label for = "toggle"></label>
 
             <div class="content">
-                <h1>DISASTER RELIEF</h1>
+
+                <!--Nav Bar-->
+                <nav class="navbar navbar-default">
+                  <div class="container-fluid">
+                    <div class="navbar-header">
+                      <a class="navbar-brand" href="#">DISASTER RELIEF</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="#">Home</a></li>
+                      <li><a href="#">Page 1</a></li>
+                      <li><a href="#">Page 2</a></li>
+                      <li><a href="#">Page 3</a></li>
+                    </ul>
+                  </div>
+                </nav>
+
+                <!--Relief Map-->
+                <div class = "relief-map">
+
+                <!--
+                    <div>
+                      <button id="drop-pin" type="button">DROP PIN</button>
+                    </div>
+                -->
+                    <div id="map"></div>
+                </div>
             </div>
 
             <div class="slide-menu">
@@ -28,36 +55,11 @@
                     <img src="./clients/img/omnicon.png" height="70" width = "70">
                   </div>
                     <nav class="menu">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Test1</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Register</a></li>
-                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">Locations</a></li>
+                        <li><a href="#">Logout</a></li>
                     </nav>
             </div>
-
         </div>
-
-
-
-        <!--Relief Map-->
-        <div class = "reliefMap">
-            <br><br><br>
-            <p> Relief Map</p>
-
-            <div>
-              <button id="DropPin" type="button">Drop Pin</button>
-            </div>
-
-            <br/>
-
-            <div id="map"></div>
-
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvpWn3VCKpN7zo7nAI266v50ql36b7vvc&signed_in=true&callback=initMap"
-            async defer></script>
-        </div>
-
 
         <!--Infographics-->
         <div class = "infographics">
