@@ -1,4 +1,6 @@
-module.exports = function (app, db, ObjectID) {
+module.exports = function (app, db, ObjectID, workers, events) {
+
+  var shuffle = require('../structures/shuffle')(workers,events);
 
 	// WORKING
 	app.post('/worker/new/:name', function (req, res) {
@@ -24,7 +26,10 @@ module.exports = function (app, db, ObjectID) {
           function (err, data) {
               console.log(JSON.stringify(data));
               res.send(JSON.stringify(data));
-          });
+        });
+
+        workers.push(users, user_object);
+        shuffle.allocate();
 
       });
 
