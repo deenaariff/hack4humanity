@@ -1,11 +1,13 @@
 module.exports = function (app, db, ObjectID, workers, events) {
 
-  var shuffle = require('../structures/shuffle')(workers,events);
+  var ai = require('../structures/shuffle')(workers,events);
+  var queue = require('../structures/wQueue');
+  var pqueue = require('../structures/eventPQueue')
 
 	// WORKING
 	app.post('/worker/new/:name', function (req, res) {
 
-     db.events.count(function(error, nbDocs) {
+     db.users.count(function(error, nbDocs) {
 
         var user_object = {
           "uuid": nbDocs + 1,
@@ -28,8 +30,36 @@ module.exports = function (app, db, ObjectID, workers, events) {
               res.send(JSON.stringify(data));
         });
 
-        workers.push(users, user_object);
-        shuffle.allocate();
+        var quickSortbyID = function (events) {
+            var pivot = events[0];
+            var lessThan = [];
+            var greaterThan = [];
+            for (var k = 1; k < events.length; k++) {
+              // original function sorted in ascending, reversed operator to make descending 
+                if (data[k][6] > pivot[6]) lessThan.push(data[k]);   
+                else greaterThan.push(data[k]);
+            }
+            if (lessThan.length > 1) lessThan = quickSortbyID(lessThan); // sort data less than pviot
+            lessThan.push(events[0]);
+            if (greaterThan.length > 1) greaterThan = quickSortbyID(greaterThan); // sort data greater than pivot
+            return lessThan.concat(greaterThan);
+        }
+
+          // Intelligent Allocation
+        while (workers.length != 0 || events.length != 0) {
+           worker = shift(workers);
+           var first = events[0];
+           if(events[0].priority != 0) {
+                events[0].commited_workers += worker;
+                priority = (first[3] - first[4].size())*severity;
+                quickSortbyID(events);
+            }
+           else {
+              for (var i = 0; k < first[3].size(); i++) 
+                workers.push(first.commited_workers[i]);
+              delete(events[0]);
+           }
+        }   
 
       });
 
@@ -45,6 +75,7 @@ module.exports = function (app, db, ObjectID, workers, events) {
         res.send(JSON.stringify ({ error: "DB Error" }));
       }
       else { 
+
         res.send(JSON.stringify(docs));
       }
     });

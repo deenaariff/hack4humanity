@@ -4,7 +4,6 @@ var app = express();
 var bodyParser = require('body-parser');
 var cors = require('cors')
 
-
 // PARSER
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -37,6 +36,7 @@ app.get('/', function (req, res) {
 
 // LISTEN 
 app.listen(process.env.PORT || 5000, function(){
+  console.log("Started")
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 

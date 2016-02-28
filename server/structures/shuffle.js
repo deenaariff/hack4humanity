@@ -5,8 +5,8 @@ var workerQueue = require('./wQueue')
 var eventPQueue = require('./eventPQueue')
 
 function allocate () {
-	while (workers.length != 0 || events.isFull()) {
-		eventPqueue.push(events, workerQueue.pop(workers));
+	while (workers.length != 0 || events.length != 0) {
+		eventPqueue.pushEvent(events, workerQueue.pop(workers));
 	}
 }
 
