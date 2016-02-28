@@ -16,6 +16,4 @@ function submitEvent() {
 	console.log("Longitude: ", longitude);
 	console.log("Leader: ", leader);
 	console.log("Priority: ", priority);
-
-
 }
