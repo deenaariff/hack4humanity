@@ -1,0 +1,14 @@
+{
+	  "euid": ,
+      "position": {
+        "long": 0,
+        "lat": 0
+      },
+      "completed" : , 
+      "leader": "Bog Saggot",
+      "workers_needed": 0,
+      "commited_workers": [],
+      "potential_workers": [],
+      "type": "earthquake",
+      "severity": 9
+}

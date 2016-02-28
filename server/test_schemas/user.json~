@@ -1,0 +1,18 @@
+[
+	
+"user":
+[
+{
+      "uuid": 99999,
+      "name": "Bob Saggot",
+      "is_leader": 0,
+      "phone": "9999999999",
+      "email": "example@gmail.com",
+      "even": "earthquake",
+      "cur_pos": {
+        "long": 0,
+        "lat": 0
+      },
+      "status": "available",
+]}
+}]
