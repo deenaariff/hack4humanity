@@ -1,7 +1,7 @@
 module.exports = function (app, db, ObjectID, workers, events) {
 
     var ObjectId = ObjectID;
-    var shuffle = require('../structures/shuffle')(workers,events);
+    var ai = require('../structures/shuffle')(workers,events);
 
     var scramble = function () {
         var guidHolder = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';
@@ -38,7 +38,6 @@ module.exports = function (app, db, ObjectID, workers, events) {
             "completed" : 0, 
             "workers_needed": 0,
             "commited_workers": [],
-            "potential_workers": [],
             "type": req.params.event_type,
             "priority": 0,
             "severity": req.params.severity
@@ -50,17 +49,16 @@ module.exports = function (app, db, ObjectID, workers, events) {
                 res.send(JSON.stringify(data));
           });
 
-          shuffle.eventPQueue.push(events, event_object);
-          shuffle.allocate(events);
+          ai.eventPQueue.push(events, event_object);
+          ai.allocate(events);
 
 
     });
 
     // GET ALL EVENTS
     app.get('/events/getAll', function (req, res, next) {
-        console.log("Get All Called");
+        console.log("getAll() Called");
         db.events.find( function (err, data) {
-          console.log("In find");
           res.send(JSON.stringify(data));
         });
 

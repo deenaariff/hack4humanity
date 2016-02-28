@@ -1,6 +1,6 @@
 module.exports = function (app, db, ObjectID, workers, events) {
 
-  var shuffle = require('../structures/shuffle')(workers,events);
+  var ai = require('../structures/shuffle')(workers,events);
 
 	// WORKING
 	app.post('/worker/new/:name', function (req, res) {
@@ -28,8 +28,8 @@ module.exports = function (app, db, ObjectID, workers, events) {
               res.send(JSON.stringify(data));
         });
 
-        workers.push(users, user_object);
-        shuffle.allocate();
+        ai.workerQueue.push(workers, user_object);
+        ai.allocate();
 
       });
 
