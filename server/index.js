@@ -4,7 +4,6 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-var PORT = 5000;
 
 // PARSER
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -27,8 +26,9 @@ app.get('/', function (req, res) {
 });
 
 // LISTEN 
-console.log("Listening on PORT: "  + PORT);
-app.listen(PORT);
+app.listen(process.env.PORT || 5000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
 
 
