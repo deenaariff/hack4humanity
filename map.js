@@ -73,7 +73,8 @@ function updateMap(){
 
   len = events.length;
 
-  // for(int i = 0; i < len; i++){
+  for(i = 0; i < len; i++){
+    console.log(i);
   //   addMarker(events[i].uid, events[i].position, 2);
-  // }
+  }
 }
