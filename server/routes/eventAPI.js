@@ -1,7 +1,6 @@
 module.exports = function (app, db, ObjectID, workers, events) {
 
     var ObjectId = ObjectID;
-    var ai = require('../structures/shuffle')(workers,events);
 
     var scramble = function () {
         var guidHolder = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';
@@ -48,9 +47,14 @@ module.exports = function (app, db, ObjectID, workers, events) {
                 console.log(JSON.stringify(data));
                 res.send(JSON.stringify(data));
           });
-
-          ai.eventPQueue.push(events, event_object);
-          ai.allocate(events);
+          /*
+          console.log("WORKING");
+          pqueue.pushEvent(events, event_object);
+          // Intelligent Allocation
+          while (workers.length != 0 || events.length != 0) {
+            pqueue.pushEvent(events, queue.pop(workers));
+          }
+          */
 
 
     });

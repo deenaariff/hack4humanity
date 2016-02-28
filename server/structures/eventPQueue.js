@@ -1,26 +1,35 @@
-module.exports = function () {
-    
-function pushWorker(events, worker) {
+
+var pushWorker = function (events, worker, wqueue) {
 	var first = events[0];
 	if(events[0].priority != 0) {
     	events[0].commited_workers += worker;
   		priority = (first.workers_needed - first.commited_workers.size())*severity;
   		quickSortbyID(events);
 	}
+	else {
+		for (var i = 0; k < first.commited_workers.length; i++) 
+			wqueue.push(first.commited_workers[i]);
+		delete(events[0]);
+	}
 }
     
-function pushEvent(events, e) {
+var pushEvent = function (events, e) {
 	events += e;
 	lindex = events.length() - 1;
-    events[lindex].priority = (events[length].workers_needed - events[length].commited_workers) * events[length].severity;
+    events[lindex].priority = (events[lindex].workers_needed - events[lindex].commited_workers) * events[lindex].severity;
     quickSortbyID(events);  
 }
     
-function updateEvents(events) {
+var updateEvents = function (events) {
     quickSortbyID(events);
+    console.log("UPDATED PRIORITY QUEUE")
+    for (var k = 0; k < events.length; k++) {
+    	console.log(events[k].priority);
+    	console.log(events[k].type);
+    }
 }
 
-function quickSortbyID (events) {
+var quickSortbyID = function (events) {
     var pivot = events[0];
     var lessThan = [];
     var greaterThan = [];
@@ -35,4 +44,10 @@ function quickSortbyID (events) {
     return lessThan.concat(greaterThan);
 }
 
+module.exports = {
+  pushWorker: pushWorker,
+  pushEvent: pushEvent,
+  updateEvents: updateEvents,
+  quickSortbyID: quickSortbyID
 }
+
