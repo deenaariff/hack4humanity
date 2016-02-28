@@ -4,11 +4,11 @@ Hack for Humanity relief effort coordination
 
 APIS for Workers
 
-  Worker(GET): /worker/new/:name
+  Worker(POST): /worker/new/:name
 
   Get Worker Requests(GET): worker/requests/:id
 
-  Accept/Deny Requets(POST): /worker/:id/:event/:accept
+  Accept/Deny Requets(POST): /worker/:id/:event/:acc   ept
 
 
 APIS for Requester
