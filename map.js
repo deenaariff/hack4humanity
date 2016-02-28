@@ -73,8 +73,19 @@ function updateMap(){
 
   len = events.length;
 
-  for(i = 0; i < len; i++){
-    console.log(i);
-  //   addMarker(events[i].uid, events[i].position, 2);
+  console.log(len);
+
+  addMarker(events[0].euid, events[0].position, 2);
+
+  // for (i = 0; i < len; i++){
+  //   console.log("Test");
+  //   addMarker(events[i].euid, events[i].position, 2);
+  // }
+}
+
+function test(){
+  for (i = 0; i < 3; i++){
+    console.log("Test");
+    addMarker(events[i].euid, events[i].position, 2);
   }
 }
