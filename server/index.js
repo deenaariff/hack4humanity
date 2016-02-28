@@ -2,13 +2,15 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+var cors = require('cors')
+
 
 
 // PARSER
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+app.use(cors())
+
 
 // DB COMPONENTS
 var mongojs =  require('mongojs');
@@ -21,6 +23,11 @@ var mongodb = require("mongodb"),
 var requesterAPI = require('./routes/requesterAPI')(app, db, ObjectID);
 var workerAPI = require('./routes/workerAPI')(app, db, ObjectID);
 var eventAPI = require('./routes/eventAPI')(app, db, ObjectID);
+
+
+// DATASTRUCTURE COMPONENTS
+var workerQueue = require('./structures/wQueue')
+var eventPQueue = require('./structures/eventPQueue')
 
 app.get('/', function (req, res) { 
 	res.end("Working");
