@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="requester.js."></script>
+    </head>
+    <body>
+        <form method="post" action="process.php">
+            <fieldset>
+                <legend>Update Workers Needed:</legend><br>
+                Enter User ID<br>
+                <input type="text" name="name">
+                <br><br>
+                Enter Number Needed:<br>
+                <input type="text" name="num">
+                <br><br>
+                <button type="button" id = "load" onclick="sendAJAX()">Submit</button>
+            </fieldset>
+        </form>
+        
+        <form method="get" action="process1.php">
+            <fieldset>
+                <legend>Data of Requester: </legend><br>
+                Enter Other User's ID<br>
+                <input type="text" name="name">
+                <br><br>
+                <button type="button" id = "load" onclick="sendAJAX1()">Submit</button>
+            </fieldset>
+        </form>
+        
+        
+        </form>
+    </body>
+</html>

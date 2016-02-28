@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="submitEventForm.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="eventForm.js"></script>
     </head>
     <body>
         <form method="post" action="process.php">
@@ -30,6 +31,8 @@
                 <br><br>
                 <button type="button" onclick="submitEvent()">Submit Event</button>
             </fieldset>
+            <br><br>
+            <button type="button" onclick="getEvent()">Get Event</button>
         </form>
     </body>
 </html>

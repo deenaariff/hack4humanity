@@ -17,3 +17,21 @@ function submitEvent() {
 	console.log("Leader: ", leader);
 	console.log("Priority: ", priority);
 }
+
+
+function getEvent() {
+$.ajax({
+    type: "GET",
+    url: "http://51491492.ngrok.io/events/getAll",
+    dataType: JSON,
+    error: function (data) {
+        console.log("request error");
+        console.log(data);
+    },
+    success: function(userId){
+        console.log("request executing");
+        console.log(userId);
+    },
+});
+    
+} 
