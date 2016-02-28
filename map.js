@@ -4,13 +4,13 @@ var map;
 var markers = {};
 
 function registerHandlers(){
-  update();
+  //updateMarkers();
 }
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.773972, lng: -122.4167},
-    zoom: 13
+    zoom: 11
   });
 
   var infoWindow = new google.maps.InfoWindow({map: map});
@@ -60,25 +60,46 @@ function removeMarker(euid){
 
 }
 
-var unparsed_events;
+//async parse
+var events;
+var len;
+var data = $.get("http://51491492.ngrok.io/events/getAll", function(){parseEvents();});
 
-function update(){
+//var unparsed_events;
 
-  unparsed_events = $.get("http://51491492.ngrok.io/events/getAll");
+function parseEvents(){
+  events = JSON.parse(data.responseText);
+  console.log(events);
 
-  setTimeout(function(){
+  len = events.length;
 
-    var events = JSON.parse(unparsed_events.responseText);
-    len = events.length;
+  updateMarkers();
 
-    for(i = 0; i < len; i++){
-      addMarker(events[i].euid, events[i].position, 2);
-    }
-
-    //addMarker(events[0].euid, events[0].position, 2);
-  }, 500);
 }
 
-// function update2(){
+function updateMarkers(){
+  for(i = 0; i < len; i++){
+    addMarker(events[i].euid, events[i].position, 2);
+  }
+}
+
+
+// function updateTable(){
+//   //update Table / Feed
+//   var tbl=$("<table/>").attr("id","mytable");
+//   $("#div1").append(tbl);
+//   for(i = 0; i < len; i++)
+//   {
+//       var tr="<tr>";
+//       var td1="<td>"+events[i]["euid"]+"</td>";
+//       var td2="<td>"+events[i]["name"]+"</td>";
+//       var td3="<td>"+events[i]["color"]+"</td></tr>";
 //
+//       $("#mytable").append(tr+td1+td2+td3);
+//  }
 // }
+
+function update(){
+  updateMarker();
+  updateTable();
+}
